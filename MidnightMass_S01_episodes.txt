@@ -1,7 +1,0 @@
-01 - Book I: Genesis
-02 - Book II: Psalms
-03 - Book III: Proverbs
-04 - Book IV: Lamentations
-05 - Book V: Gospel
-06 - Book VI: Acts of the Apostles
-07 - Book VII: Revelation
