@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PruebasSelenium_Suite">
+
+    <test name="PruebasSelenium_Tests">
+      <!--    <parameter name="driverProvider" value="IExplorerDriver" />  
+	 	 <parameter name="driverProvider" value="MozillaFirefoxDriver" />  --> 
+		 <parameter name="driverProvider" value="GoogleChromeDriver" /> 
+	<!--  	  <parameter name="driverProvider" value="MultipleBrowserDriver" />  -->
+
+       <classes>
+<!--           <class name="com.eurobits.selenium.tests.imdb.IMDBSeries_BetterCallSaul_S05" />-->
+<!--           <class name="com.eurobits.selenium.tests.imdb.IMDBSeries_BetterCallSaul_S06" />-->
+<!--           <class name="com.eurobits.selenium.tests.imdb.IMDBSeries_BlyManor" />-->
+<!--           <class name="com.eurobits.selenium.tests.imdb.IMDBSeries_CityHunter1" />-->
+<!--           <class name="com.eurobits.selenium.tests.imdb.IMDBSeries_CityHunter2" />-->
+<!--           <class name="com.eurobits.selenium.tests.imdb.IMDBSeries_CityHunter3" />-->
+<!--           <class name="com.eurobits.selenium.tests.imdb.IMDBSeries_CityHunter91" />-->
+<!--           <class name="com.eurobits.selenium.tests.imdb.IMDBSeries_DexterNewBlood" />-->
+<!--           <class name="com.eurobits.selenium.tests.imdb.IMDBSeries_CobraKai_S03" />-->
+<!--           <class name="com.eurobits.selenium.tests.imdb.IMDBSeries_CobraKai_S04" />-->
+<!--           <class name="com.eurobits.selenium.tests.imdb.IMDBSeries_CobraKai_S05" />-->
+<!--           <class name="com.eurobits.selenium.tests.imdb.IMDBSeries_Galavant_S01" />-->
+<!--           <class name="com.eurobits.selenium.tests.imdb.IMDBSeries_Galavant_S02" />-->
+<!--           <class name="com.eurobits.selenium.tests.imdb.IMDBSeries_GhostInTheShellSAC2045_S01" />-->
+<!--           <class name="com.eurobits.selenium.tests.imdb.IMDBSeries_GhostInTheShellSAC2045_S02" />-->
+<!--           <class name="com.eurobits.selenium.tests.imdb.IMDBSeries_LoveDeathRobots_S01" />-->
+<!--           <class name="com.eurobits.selenium.tests.imdb.IMDBSeries_Loki" />-->
+<!--           <class name="com.eurobits.selenium.tests.imdb.IMDBSeries_LoveDeathRobots_S01" />-->
+<!--           <class name="com.eurobits.selenium.tests.imdb.IMDBSeries_LoveDeathRobots_S02" />-->
+<!--           <class name="com.eurobits.selenium.tests.imdb.IMDBSeries_MrRobot_S01" />-->
+               <class name="com.eurobits.selenium.tests.imdb.IMDBSeries_MrRobot_S02" />
+<!--           <class name="com.eurobits.selenium.tests.imdb.IMDBSeries_MrRobot_S03" />-->
+<!--           <class name="com.eurobits.selenium.tests.imdb.IMDBSeries_MrRobot_S04" />-->
+<!--           <class name="com.eurobits.selenium.tests.imdb.IMDBSeries_MidnightMass_S01" />-->
+<!--           <class name="com.eurobits.selenium.tests.imdb.IMDBSeries_Norsemen_S01" />-->
+<!--           <class name="com.eurobits.selenium.tests.imdb.IMDBSeries_Norsemen_S02" />-->
+<!--           <class name="com.eurobits.selenium.tests.imdb.IMDBSeries_Norsemen_S03" />-->
+<!--           <class name="com.eurobits.selenium.tests.imdb.IMDBSeries_PeakyBlinders_S01" />-->
+<!--           <class name="com.eurobits.selenium.tests.imdb.IMDBSeries_PeakyBlinders_S04" />-->
+<!--           <class name="com.eurobits.selenium.tests.imdb.IMDBSeries_PeakyBlinders_S05" />-->
+<!--           <class name="com.eurobits.selenium.tests.imdb.IMDBSeries_PeakyBlinders_S06" />-->
+<!--           <class name="com.eurobits.selenium.tests.imdb.IMDBSeries_Severance_S01" />-->
+<!--           <class name="com.eurobits.selenium.tests.imdb.IMDBSeries_Sense8_S01" />-->
+<!--           <class name="com.eurobits.selenium.tests.imdb.IMDBSeries_Sense8_S02" />-->
+<!--           <class name="com.eurobits.selenium.tests.imdb.IMDBSeries_SquidGame_S01" />-->
+<!--           <class name="com.eurobits.selenium.tests.imdb.IMDBSeries_StarTrekDiscovery_S03" />-->
+<!--           <class name="com.eurobits.selenium.tests.imdb.IMDBSeries_TheBoys_S01" />-->
+<!--           <class name="com.eurobits.selenium.tests.imdb.IMDBSeries_TheBoys_S02" />-->
+<!--           <class name="com.eurobits.selenium.tests.imdb.IMDBSeries_TheBoys_S03" />-->
+<!--           <class name="com.eurobits.selenium.tests.imdb.IMDBSeries_TheWalkingDead_S10" />-->
+<!--           <class name="com.eurobits.selenium.tests.imdb.IMDBSeries_TheWalkingDead_S11" />-->
+<!--           <class name="com.eurobits.selenium.tests.imdb.IMDBSeries_Vikingos_S06" />-->
+<!--           <class name="com.eurobits.selenium.tests.imdb.IMDBSeries_WandaVision" />-->
+<!--           <class name="com.eurobits.selenium.tests.imdb.IMDBSeries_WhatIf_S01" />-->
+<!--           <class name="com.eurobits.selenium.tests.imdb.IMDBSeries_YojoSenki" />-->
+<!--           <class name="com.eurobits.selenium.tests.imdb.IMDBSeries_" />-->
+<!--
+    <class name="com.eurobits.selenium.tests.imdb.Filecrypt_Links" />&ndash;&gt;-->
+       </classes></test>
+</suite>

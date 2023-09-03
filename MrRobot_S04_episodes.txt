@@ -1,0 +1,13 @@
+01 - 401 Unauthorized
+02 - 402 Payment Required
+03 - 403 Forbidden
+04 - 404 Not Found
+05 - 405 Method Not Allowed
+06 - 406 Not Acceptable
+07 - 407 Proxy Authentication Required
+08 - 408 Request Timeout
+09 - 409 Conflict
+10 - 410 Gone
+11 - eXit
+12 - whoami
+13 - Hello, Elliot

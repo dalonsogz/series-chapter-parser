@@ -1,3 +1,10 @@
+# Idea IntelliJ
+.idea/
+*.iml
+
+**/target
+**/tests/cobranding/**
+
 # Compiled class file
 *.class
 

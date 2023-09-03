@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PruebasSelenium_Suite">
+
+    <test name="PruebasSelenium_Tests">
+
+        <!-- 	 <parameter name="driverProvider" value="MozillaFirefoxDriver" /> -->
+           <parameter name="driverProvider" value="GoogleChromeDriver" />
+
+          <classes>        
+
+              <class name="com.eurobits.selenium.tests.cobranding.Aggregation_private_R000_CB000" />
+<!--              <class name="com.eurobits.selenium.tests.cobranding.Aggregation_private_R900_CB000" />-->
+<!--              <class name="com.eurobits.selenium.tests.cobranding.Aggregation_private_R000_sinCuentas" />-->
+<!--              <class name="com.eurobits.selenium.tests.cobranding.Aggregation_private_SecondPhase" />-->
+ 		</classes>
+    </test>
+</suite>
