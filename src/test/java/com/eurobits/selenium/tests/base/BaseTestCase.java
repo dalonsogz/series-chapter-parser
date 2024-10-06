@@ -57,12 +57,10 @@ public class BaseTestCase extends SeleniumDriverOperations {
 			//		urlLogin= urlLogin.replace("\\","");
 
 			//Creamos url final
-			String urlInicio = baseUrl;   // +"?processId="+processId+"&userId="+userId;
-			System.out.println("La url de inicio es: " + urlInicio);
-			getDriver().get(urlInicio);
+            System.out.println("La url de inicio es: " + baseUrl);
+			getDriver().get(baseUrl);
 		}
 
-		// TODO
 		return initPageObject(pageObgectClass);
 	}
 
@@ -77,9 +75,8 @@ public class BaseTestCase extends SeleniumDriverOperations {
 //		urlLogin= urlLogin.replace("\\","");
 
 		//Creamos url final
-		String urlInicio=baseUrl;   // +"?processId="+processId+"&userId="+userId;
-		System.out.println("La url de inicio es: "+urlInicio);
-		getDriver().get(urlInicio);
+        System.out.println("La url de inicio es: "+ baseUrl);
+		getDriver().get(baseUrl);
 
 		return initPageObject(PageObjectFilecriptLinksPage.class);
 	}
@@ -101,9 +98,8 @@ public class BaseTestCase extends SeleniumDriverOperations {
 			//		urlLogin= urlLogin.replace("\\","");
 
 			//Creamos url final
-			String urlInicio = baseUrl;   // +"?processId="+processId+"&userId="+userId;
-			System.out.println("La url de inicio es: " + urlInicio);
-			getDriver().get(urlInicio);
+            System.out.println("La url de inicio es: " + baseUrl);
+			getDriver().get(baseUrl);
 		}
 
 		return initPageObject(PageObjectGoogleAccountPage.class);
@@ -120,12 +116,11 @@ public class BaseTestCase extends SeleniumDriverOperations {
 //		urlLogin= urlLogin.replace("\\","");
 
 		//Creamos url final
-		String urlInicio=baseUrl;   // +"?processId="+processId+"&userId="+userId;
-		System.out.println("La url de inicio es: "+urlInicio);
+        System.out.println("La url de inicio es: "+ baseUrl);
 		try {
-			getDriver().get(urlInicio);
+			getDriver().get(baseUrl);
 		} catch (Exception e) {
-			// TODO
+			System.out.println("Error habitual");
 		}
 
 		return initPageObject(PageObjectIMDBEpisodesPage.class);

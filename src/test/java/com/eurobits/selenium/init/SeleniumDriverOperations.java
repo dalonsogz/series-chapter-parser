@@ -57,7 +57,7 @@ public abstract class SeleniumDriverOperations  {
 					try {
 						setDriver(provider.initDriver());
 						LOG.debug("Driver inicializado correctamente");
-					} catch (TestAutomatizacionException e) {
+					} catch (Exception e) {
 						LOG.error(e.getLocalizedMessage(), e);
 						throw new TestAutomatizacionException("Error al inicializar driver mediante provider [" + provider + "].", e);
 					}

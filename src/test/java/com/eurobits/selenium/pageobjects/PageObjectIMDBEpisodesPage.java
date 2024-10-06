@@ -21,7 +21,7 @@ public class PageObjectIMDBEpisodesPage extends BasePageObject {
 	private List<WebElement> episodesImages;
 
 	// <h3 class="ipc-title__text"><span id="contribute">Contribute to this page</span>...</h3>
-	final private String PAGE_LOADED_XPATH = "//h3//span[text()='Contribuir a esta página']";
+	private static final String PAGE_LOADED_XPATH = "//h3//span[text()='Contribuir a esta página']";
 
 	public PageObjectIMDBEpisodesPage(WebDriver driver) {
 		super(driver);
@@ -34,7 +34,7 @@ public class PageObjectIMDBEpisodesPage extends BasePageObject {
 	}
 
 	// Encuentra los elementos
-	public List findLinkEpisodes() {
+	public List<WebElement> findLinkEpisodes() {
 		return episodesLinks;
 //		return findElementsByXpath(str);
 	}

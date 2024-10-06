@@ -9,7 +9,6 @@ import org.slf4j.LoggerFactory;
 import org.testng.annotations.Test;
 
 import java.io.BufferedWriter;
-import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.OutputStreamWriter;
 import java.nio.file.FileSystems;
