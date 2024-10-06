@@ -24,8 +24,11 @@
 <!--           <class name="com.eurobits.selenium.tests.imdb.IMDBSeries_Galavant_S02" />-->
 <!--           <class name="com.eurobits.selenium.tests.imdb.IMDBSeries_GhostInTheShellSAC2045_S01" />-->
 <!--           <class name="com.eurobits.selenium.tests.imdb.IMDBSeries_GhostInTheShellSAC2045_S02" />-->
-           <class name="com.eurobits.selenium.tests.imdb.IMDBSeries_Hannibal_S01" />
-<!--           <class name="com.eurobits.selenium.tests.imdb.IMDBSeries_Hannibal_S02" />-->
+           <class name="com.eurobits.selenium.tests.imdb.IMDBSeries">
+                <parameter name="MAIN_TITLE" value="Hannibal_S01" />
+                <parameter name="EPISODES_RESULT_FILE" value="Hannibal_S01_episodes.txt" />
+           </class>
+           <!--           <class name="com.eurobits.selenium.tests.imdb.IMDBSeries_Hannibal_S02" />-->
 <!--           <class name="com.eurobits.selenium.tests.imdb.IMDBSeries_Hannibal_S03" />-->
 <!--           <class name="com.eurobits.selenium.tests.imdb.IMDBSeries_LoveDeathRobots_S01" />-->
 <!--           <class name="com.eurobits.selenium.tests.imdb.IMDBSeries_Loki" />-->

@@ -7,6 +7,7 @@ import org.openqa.selenium.WebElement;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.testng.annotations.Test;
+import org.testng.annotations.Parameters;
 
 import java.io.BufferedWriter;
 import java.io.IOException;
@@ -24,6 +25,25 @@ public class IMDBSeries extends BaseTestCase {
 
 	public String MAIN_TITLE = "";
 	public String EPISODES_RESULT_FILE = MAIN_TITLE+"_"+"episodes.txt";
+
+	/**
+	 * Constructor vacío.
+	 */
+	public IMDBSeries() {
+	}
+
+	/**
+	 * Método que se ejecuta antes de cada test para configurar los parámetros.
+	 *
+	 * @param mainTitle           Título principal de la serie.
+	 * @param episodesResultFile  Nombre del archivo de resultados.
+	 */
+	@Parameters({"MAIN_TITLE", "EPISODES_RESULT_FILE"})
+	@Test
+	public void setUp(String mainTitle, String episodesResultFile) {
+		this.MAIN_TITLE = mainTitle;
+		this.EPISODES_RESULT_FILE = episodesResultFile;
+	}
 
 	@Test
 	public void writeEpisodesTitles()  {
