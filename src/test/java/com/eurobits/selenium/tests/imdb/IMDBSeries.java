@@ -34,13 +34,15 @@ public class IMDBSeries extends BaseTestCase {
 	@DataProvider(name = "seriesDataProvider")
 	public Object[][] seriesDataProvider() {
 
-		Enumeration<Object> propsElements = TestDataUtils.getProperties("series_config").elements();
-		ArrayList<Object> elements = Collections.list(propsElements);
-		Object[][] data = new Object[elements.size()][2];
+		Properties seriesProps = TestDataUtils.getProperties("series_config");
+		List<String> keys = new ArrayList<>(seriesProps.stringPropertyNames());
+		Collections.sort(keys);
+
+		Object[][] data = new Object[keys.size()][2];
 		int index = 0;
 		String element = null;
-		for (Object objElement:elements) {
-			element = objElement.toString();
+		for (Object key:keys) {
+			element = seriesProps.get(key).toString();
 			data[index][0] = element.substring(0,element.indexOf(","));
 			data[index][1] = element.substring(element.indexOf(",")+1);
 			index++;
