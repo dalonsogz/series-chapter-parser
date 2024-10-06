@@ -1,12 +1,13 @@
 package com.eurobits.selenium.utils;
 
 /**import java.io.FileOutputStream;*/
-import java.io.IOException;
-import java.io.InputStream;
-/**import java.io.OutputStream;*/
-import java.util.Properties;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
+import java.io.IOException;
+import java.io.InputStream;
+import java.util.Properties;
 
 /**
  * Utilidades para datos de tests.
@@ -121,6 +122,25 @@ public final class TestDataUtils {
 
 		return value;
 	}
-	
+
+	public static Properties getProperties(String porpertiesFile) {
+
+		String fileClasspath = DATA_FILES_CLASSPATH + porpertiesFile + PROPERTIES_EXT;
+
+		final InputStream inputStream = TestDataUtils.class.getClassLoader().getResourceAsStream(fileClasspath);
+
+		Properties prop = new Properties();
+
+		/**load properties file*/
+		try {
+			prop.load(inputStream);
+            assert inputStream != null;
+            inputStream.close();
+		} catch (IOException e) {
+			LOG.error(e.getLocalizedMessage(), e);
+		}
+
+		return prop;
+	}
 }
 

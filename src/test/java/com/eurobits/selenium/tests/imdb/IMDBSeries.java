@@ -6,8 +6,8 @@ import com.eurobits.selenium.utils.TestDataUtils;
 import org.openqa.selenium.WebElement;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
-import org.testng.annotations.Parameters;
 
 import java.io.BufferedWriter;
 import java.io.IOException;
@@ -15,16 +15,15 @@ import java.io.OutputStreamWriter;
 import java.nio.file.FileSystems;
 import java.nio.file.Files;
 import java.nio.file.Paths;
-import java.util.List;
-import java.util.Locale;
+import java.util.*;
 
 @Test
 public class IMDBSeries extends BaseTestCase {
 
 	private static final Logger LOG = LoggerFactory.getLogger(IMDBSeries.class);
 
-	public String MAIN_TITLE = "";
-	public String EPISODES_RESULT_FILE = MAIN_TITLE+"_"+"episodes.txt";
+	protected static String MAIN_TITLE = null;
+	protected static String EPISODES_RESULT_FILE = null;
 
 	/**
 	 * Constructor vacío.
@@ -32,33 +31,40 @@ public class IMDBSeries extends BaseTestCase {
 	public IMDBSeries() {
 	}
 
-	/**
-	 * Método que se ejecuta antes de cada test para configurar los parámetros.
-	 *
-	 * @param mainTitle           Título principal de la serie.
-	 * @param episodesResultFile  Nombre del archivo de resultados.
-	 */
-	@Parameters({"MAIN_TITLE", "EPISODES_RESULT_FILE"})
-	@Test
-	public void setUp(String mainTitle, String episodesResultFile) {
-		this.MAIN_TITLE = mainTitle;
-		this.EPISODES_RESULT_FILE = episodesResultFile;
+	@DataProvider(name = "seriesDataProvider")
+	public Object[][] seriesDataProvider() {
+
+		Enumeration<Object> propsElements = TestDataUtils.getProperties("series_config").elements();
+		ArrayList<Object> elements = Collections.list(propsElements);
+		Object[][] data = new Object[elements.size()][2];
+		int index = 0;
+		String element = null;
+		for (Object objElement:elements) {
+			element = objElement.toString();
+			data[index][0] = element.substring(0,element.indexOf(","));
+			data[index][1] = element.substring(element.indexOf(",")+1);
+			index++;
+		}
+
+		return data;
 	}
 
-	@Test
-	public void writeEpisodesTitles()  {
+	@Test(dataProvider = "seriesDataProvider")
+	public void testSeries(String episodesUrl, String episodesResultFile) {
+		System.out.println("Episodes Url: " + episodesUrl);
+		System.out.println("Episodes Result File: " + episodesResultFile);
+		writeEpisodesTitles(episodesUrl,episodesResultFile);
+	}
+
+	private void writeEpisodesTitles(String episodesUrl, String episodesResultFile)  {
 
 		List<WebElement> episodesLinks = null;
 
-		/*
-		 * Inicializamos el Driver 
-		 * Actualizamos baseURL 
-		 */
 		LOG.debug("INICIO");
-		LOG.debug("00 -Caso de Prueba: IMDB Capitulos Series - " + MAIN_TITLE);
+		LOG.debug("00 -Caso de Prueba: IMDB Capitulos Series - " + episodesUrl);
 
 		/* Acceso URL */
-		PageObjectIMDBEpisodesPage page = irIMDBEpisodesPage(MAIN_TITLE);
+		PageObjectIMDBEpisodesPage page = irIMDBEpisodesPage(episodesUrl);
 		LOG.debug("01 -Cargamos la página de episodios");
 
 		/*Esperamos que haya cargado*/
@@ -70,20 +76,20 @@ public class IMDBSeries extends BaseTestCase {
 		LOG.debug("02 -Obtenemos el listado de episodios");
 
 		/*Guardamos la lista de episodios*/
-		writeEpisodestoFile(episodesLinks);
+		writeEpisodestoFile(episodesLinks,episodesResultFile);
 		LOG.debug("03 -Guardamos el listado de episodios");
 
 		/*Comprobamos que ha terminado OK*/
 		LOG.debug("FIN- TEST OK");
 	}
 
-	private void writeEpisodestoFile(List<WebElement> episodesList) {
+	private void writeEpisodestoFile(List<WebElement> episodesList, String episodesResultFile) {
 		BufferedWriter dos = null;
 		String targetDir= TestDataUtils.getSystemData("targetDir");
 		try {
 			dos = new BufferedWriter(
 					new OutputStreamWriter(Files.newOutputStream(
-							Paths.get(targetDir + FileSystems.getDefault().getSeparator() + EPISODES_RESULT_FILE))));
+							Paths.get(targetDir + FileSystems.getDefault().getSeparator() + episodesResultFile))));
 			int counter = 1;
 			for (WebElement episode:episodesList)
 				dos.write((String.format(Locale.US, "%02d", counter++) +" - ") +

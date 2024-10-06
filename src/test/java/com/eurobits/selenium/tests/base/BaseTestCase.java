@@ -106,19 +106,17 @@ public class BaseTestCase extends SeleniumDriverOperations {
 	}
 
 	@Test
-	public PageObjectIMDBEpisodesPage irIMDBEpisodesPage(String mainTitle) {
+	public PageObjectIMDBEpisodesPage irIMDBEpisodesPage(String mainUrl) {
 
-		//String baseUrl= TestDataUtils.getData("baseUrl");
-		String baseUrl= TestDataUtils.getSystemData(mainTitle+ "_baseUrl");
-		System.out.println("La url base es: "+baseUrl);
+		System.out.println("La url base es: "+mainUrl);
 
 		//Quitamos caracteres barra "\"
 //		urlLogin= urlLogin.replace("\\","");
 
 		//Creamos url final
-        System.out.println("La url de inicio es: "+ baseUrl);
+        System.out.println("La url de inicio es: "+ mainUrl);
 		try {
-			getDriver().get(baseUrl);
+			getDriver().get(mainUrl);
 		} catch (Exception e) {
 			System.out.println("Error habitual");
 		}
