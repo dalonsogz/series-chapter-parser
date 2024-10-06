@@ -4,6 +4,6 @@ public class IMDBSeries_TheWalkingDead_S10 extends IMDBSeries {
 
     {
         super.MAIN_TITLE = "TheWalkingDead_S10";
-        super.ESPISODES_RESULT_FILE = MAIN_TITLE+"_"+"episodes.txt";
+        super.EPISODES_RESULT_FILE = MAIN_TITLE+"_"+"episodes.txt";
     }
 }

@@ -4,7 +4,7 @@ public class IMDBSeries_MrRobot_S02 extends IMDBSeries {
 
     {
         super.MAIN_TITLE = "MrRobot_S02";
-        super.ESPISODES_RESULT_FILE = MAIN_TITLE + "_" + "episodes.txt";
+        super.EPISODES_RESULT_FILE = MAIN_TITLE + "_" + "episodes.txt";
     }
 }
 

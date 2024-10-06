@@ -1,8 +1,6 @@
 package com.eurobits.selenium.pageobjects.base;
 
-import java.util.List;
-import java.util.Random;
-import java.util.concurrent.TimeUnit;
+import com.eurobits.selenium.init.SeleniumDriverOperations;
 import org.openqa.selenium.By;
 import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebDriver;
@@ -12,7 +10,10 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import com.eurobits.selenium.init.SeleniumDriverOperations;
+
+import java.util.List;
+import java.util.Random;
+import java.util.concurrent.TimeUnit;
 
 
 public class BasePageObject extends SeleniumDriverOperations {

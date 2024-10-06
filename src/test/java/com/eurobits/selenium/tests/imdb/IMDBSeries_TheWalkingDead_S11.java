@@ -4,6 +4,6 @@ public class IMDBSeries_TheWalkingDead_S11 extends IMDBSeries {
 
     {
         super.MAIN_TITLE = "TheWalkingDead_S11";
-        super.ESPISODES_RESULT_FILE = MAIN_TITLE+"_"+"episodes.txt";
+        super.EPISODES_RESULT_FILE = MAIN_TITLE+"_"+"episodes.txt";
     }
 }

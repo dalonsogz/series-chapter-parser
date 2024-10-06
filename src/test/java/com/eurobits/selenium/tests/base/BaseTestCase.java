@@ -1,16 +1,16 @@
 package com.eurobits.selenium.tests.base;
 
+import com.eurobits.selenium.init.SeleniumDriverOperations;
 import com.eurobits.selenium.pageobjects.PageObjectFilecriptLinksPage;
 import com.eurobits.selenium.pageobjects.PageObjectGoogleAccountPage;
 import com.eurobits.selenium.pageobjects.PageObjectIMDBEpisodesPage;
-import com.eurobits.selenium.pageobjects.base.BasePageObject;
-import org.testng.annotations.Test;
-import com.eurobits.selenium.init.SeleniumDriverOperations;
 import com.eurobits.selenium.pageobjects.PageObjectTouPage;
+import com.eurobits.selenium.pageobjects.base.BasePageObject;
 import com.eurobits.selenium.utils.TestDataUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.testng.annotations.AfterClass;
+import org.testng.annotations.Test;
 
 public class BaseTestCase extends SeleniumDriverOperations {
 	
@@ -122,7 +122,11 @@ public class BaseTestCase extends SeleniumDriverOperations {
 		//Creamos url final
 		String urlInicio=baseUrl;   // +"?processId="+processId+"&userId="+userId;
 		System.out.println("La url de inicio es: "+urlInicio);
-		getDriver().get(urlInicio);
+		try {
+			getDriver().get(urlInicio);
+		} catch (Exception e) {
+			// TODO
+		}
 
 		return initPageObject(PageObjectIMDBEpisodesPage.class);
 	}

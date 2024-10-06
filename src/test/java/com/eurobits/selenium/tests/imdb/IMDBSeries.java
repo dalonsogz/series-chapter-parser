@@ -2,13 +2,19 @@ package com.eurobits.selenium.tests.imdb;
 
 import com.eurobits.selenium.pageobjects.PageObjectIMDBEpisodesPage;
 import com.eurobits.selenium.tests.base.BaseTestCase;
+import com.eurobits.selenium.utils.TestDataUtils;
 import org.openqa.selenium.WebElement;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.testng.annotations.Test;
 
-import java.io.*;
-import java.nio.charset.StandardCharsets;
+import java.io.BufferedWriter;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.OutputStreamWriter;
+import java.nio.file.FileSystems;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.util.List;
 import java.util.Locale;
 
@@ -18,7 +24,7 @@ public class IMDBSeries extends BaseTestCase {
 	private static final Logger LOG = LoggerFactory.getLogger(IMDBSeries.class);
 
 	public String MAIN_TITLE = "";
-	public String ESPISODES_RESULT_FILE = MAIN_TITLE+"_"+"episodes.txt";
+	public String EPISODES_RESULT_FILE = MAIN_TITLE+"_"+"episodes.txt";
 
 	@Test
 	public void writeEpisodesTitles()  {
@@ -46,7 +52,7 @@ public class IMDBSeries extends BaseTestCase {
 
 		/*Guardamos la lista de episodios*/
 		writeEpisodestoFile(episodesLinks);
-		LOG.debug("02 -Obtenemos el listado de episodios");
+		LOG.debug("03 -Guardamos el listado de episodios");
 
 		/*Comprobamos que ha terminado OK*/
 		LOG.debug("FIN- TEST OK");
@@ -54,11 +60,15 @@ public class IMDBSeries extends BaseTestCase {
 
 	private void writeEpisodestoFile(List<WebElement> episodesList) {
 		BufferedWriter dos = null;
+		String targetDir= TestDataUtils.getSystemData("targetDir");
 		try {
-			dos = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(ESPISODES_RESULT_FILE)));
+			dos = new BufferedWriter(
+					new OutputStreamWriter(Files.newOutputStream(
+							Paths.get(targetDir + FileSystems.getDefault().getSeparator() + EPISODES_RESULT_FILE))));
 			int counter = 1;
 			for (WebElement episode:episodesList)
-				dos.write((String.format(Locale.US, "%02d", counter++) +" - ") + episode.getText() + "\n");
+				dos.write((String.format(Locale.US, "%02d", counter++) +" - ") +
+						episode.getText().substring(episode.getText().indexOf("∙ ") + 1).trim() + "\n");
 		} catch (IOException ex) {
 			ex.printStackTrace();
 		} finally {

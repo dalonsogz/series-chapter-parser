@@ -4,6 +4,6 @@ public class IMDBSeries_StarTrekDiscovery_S03  extends IMDBSeries {
 
     {
         super.MAIN_TITLE = "StarTrekDiscovery_S03";
-        super.ESPISODES_RESULT_FILE = MAIN_TITLE+"_"+"episodes.txt";
+        super.EPISODES_RESULT_FILE = MAIN_TITLE+"_"+"episodes.txt";
     }
 }
